@@ -1,4 +1,4 @@
-[PT-br] api-dados-padroes
+[pt-BR] api-dados-padroes
 =================
 
 API pública de dados padrões
