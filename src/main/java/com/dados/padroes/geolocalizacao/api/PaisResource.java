@@ -1,7 +1,7 @@
 package com.dados.padroes.geolocalizacao.api;
 
 import com.dados.padroes.geolocalizacao.model.Pais;
-import java.util.ArrayList;
+import com.dados.padroes.geolocalizacao.model.PaisRepository;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
@@ -16,21 +16,7 @@ public class PaisResource {
 
     @GET
     public List<Pais> getPaises() {
-        return getPaisesMock();
+        return new PaisRepository().getAll();
     }
-    
-    private List<Pais> getPaisesMock() {
-        
-        final Pais brasil = new Pais(1, "Brasil");
-        final Pais argentina = new Pais(2, "Argentina");
-        final Pais espanha = new Pais(3, "Espanha");
-        
-        final List<Pais> paises = new ArrayList<>();
-        paises.add(brasil);
-        paises.add(argentina);
-        paises.add(espanha);
-        
-        return paises;
-    }
-    
+
 }

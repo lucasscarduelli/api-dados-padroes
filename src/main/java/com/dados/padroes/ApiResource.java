@@ -1,7 +1,6 @@
 package com.dados.padroes;
 
 import com.dados.padroes.geolocalizacao.GeolocalizacaoResource;
-import com.dados.padroes.geolocalizacao.api.PaisResource;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.ApplicationPath;
