@@ -14,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class PaisResource {
 
-    
     @GET
     public List<Pais> getPaises() {
         return new PaisRepository().getAll();
