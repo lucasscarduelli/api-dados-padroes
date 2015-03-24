@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity(name = "pais")
 public class Pais {
@@ -13,7 +15,10 @@ public class Pais {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pais")
     @SequenceGenerator(name = "seq_pais", sequenceName = "seq_pais")
     private Integer id;
+    @NotNull
     private Integer codigo;
+    @NotNull
+    @Size(max = 100)
     private String descricao;
 
     private Pais() {
