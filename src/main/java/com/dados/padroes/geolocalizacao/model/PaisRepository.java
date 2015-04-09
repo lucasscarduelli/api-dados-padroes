@@ -2,9 +2,11 @@ package com.dados.padroes.geolocalizacao.model;
 
 import com.mysema.query.jpa.impl.JPAQuery;
 import java.util.List;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+@RequestScoped
 public class PaisRepository {
 
     private final QPais qPais = QPais.pais;

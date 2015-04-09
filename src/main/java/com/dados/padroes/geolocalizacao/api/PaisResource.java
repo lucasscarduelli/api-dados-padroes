@@ -4,6 +4,7 @@ import com.dados.padroes.geolocalizacao.model.Pais;
 import com.dados.padroes.geolocalizacao.model.PaisRepository;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
@@ -14,9 +15,12 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class PaisResource {
 
+    @Inject
+    private PaisRepository paisRepository;
+
     @GET
     public List<Pais> getPaises() {
-        return new PaisRepository().getAll();
+        return paisRepository.getAll();
     }
 
 }
