@@ -19,7 +19,6 @@
         <version.slf4j>1.6.1</version.slf4j>
     </properties>
     
-    
     <dependencies>
         <dependency>
             <groupId>org.hibernate</groupId>
