@@ -1,6 +1,5 @@
 package com.dados.padroes.geolocalizacao.api;
 
-import com.dados.padroes.geolocalizacao.model.Pais;
 import com.dados.padroes.geolocalizacao.model.PaisRepository;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -19,8 +18,8 @@ public class PaisResource {
     private PaisRepository paisRepository;
 
     @GET
-    public List<Pais> getPaises() {
-        return paisRepository.getAll();
+    public List<PaisDto> getPaises() {
+        return PaisDto.Representation.toRepresentarion(paisRepository.getAll());
     }
 
 }
