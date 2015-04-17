@@ -18,7 +18,7 @@ public class PaisResource {
     private PaisRepository paisRepository;
 
     @GET
-    public List<PaisDto> getPaises() {
+    public List<PaisDto> getAll() {
         return PaisDto.Representation.toRepresentarion(paisRepository.getAll());
     }
 
