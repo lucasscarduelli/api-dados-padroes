@@ -4,9 +4,7 @@ import com.dados.padroes.geolocalizacao.model.PaisRepository;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Stateless
@@ -20,6 +18,12 @@ public class PaisResource {
     @GET
     public List<PaisDto> getAll() {
         return PaisDto.Representation.toRepresentarion(paisRepository.getAll());
+    }
+
+    @GET
+    @Path("{codigo}")
+    public PaisDto getByCodigo(final @PathParam("codigo") Integer codigo) {
+        return PaisDto.Representation.toRepresentation(paisRepository.getByCodigo(codigo));
     }
 
 }
